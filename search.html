@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEVScope|search</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <script src="./js/search.js" defer type="module"></script>
+</head>
+<body  class="bg-[url('./imgs/backround2.png')] bg-no-repeat bg-cover bg-center w-full min-h-screen  bg-fixed
+             min-h-screen pb-20" >
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <header class=" max-w-[900px] ml-40 h-18 mt-[30px] px-6   " >
+  <nav class="flex  justify-between bg-[#080D1B] font-sans rounded-[20px] border-[#22D3EE] px-6 items-center">
+     
+    <div>
+        <img src="./imgs/logog.png" alt="logo-devScop" class="w-40" >
+    
+    </div>
+
+    <!-- Navigation -->
+    <ul class=" flex gap-9 text-sm">
+      <li><a href="./index.html" class="text-slate-200 hover:text-cyan-400 transition-colors font-semibold">Accueil</a></li>
+      <li><a  class="bg-cyan-500/20 text-cyan-400 px-5 py-2 rounded-xl font-semibold">Recherche</a></li>
+      <li><a href="" class="text-slate-200 hover:text-cyan-400 transition-colors font-semibold" >Shortlist</a></li>
+    </ul>
+
+    <!-- Actions -->
+    <div>
+     
+      <button class="bg-gradient-to-r from-cyan-400 to-pink-500
+       text-white font-semibold px-5 py-1 rounded-xl">Se connecter</button>
+    </div>
+  </nav>
+</header>
+
+<!-- </search> -->
+
+<section class="max-w-[1400px] mx-auto mt-7">
+  <form>
+    <div class="h-16 flex items-center gap-5 px-5 bg-[#101626] border border-[#293047] rounded-2xl mx-20">
+      <i class="fa-solid fa-magnifying-glass text-[#22D3EE] text-xl"></i>
+
+      <input
+      class="flex-1 bg-transparent outline-none placeholder:text-[#F1F5F9] placeholder:font-medium text-zinc-300 text-semibold "
+        type="text"
+        id="githubUsername"
+        placeholder="Rechercher un développeur GitHub..."
+        value="soufiane-boushaba"
+        aria-label="Nom d'utilisateur GitHub"
+      />
+
+      <button type="submit" class="px-6 py-2 rounded-xl text-semibold text-zinc-300 bg-gradient-to-r from-cyan-400 to-pink-500  hover:opacity-90 transition">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        Rechercher
+      </button>
+    </div>
+
+
+  </form>
+</section>
+ <main class="">
+  <div class="grid grid-cols-1 lg:grid-cols-[400px_1fr] gap-6 max-w-[1100px] mx-auto border-2 my-10 mb-10 mx-20 rounded-2xl border-purple-400 ">
+   
+    <!-- Profile Card -->
+ <aside class="flex gap-3">
+      <aside class=" grid justify-items-center">
+
+  <!-- Avatar et identité -->
+  <div class="rounded-3xl p-6  grid justify-items-center">
+    <div class="p-[3px] rounded-full w-36
+            bg-gradient-to-br from-pink-500
+            via-purple-500 to-cyan-400">
+    <img
+    class="w-36 h-36 rounded-full object-cover"
+      id="profileAvatar"
+      src="./imgs/profile.jpg"
+      alt="Photo de profil GitHub"
+    /></div>
+
+    <h2 id="profileName" class="text-3xl font-bold text-zinc-300 ">soufiane boushaba</h2>
+    <p id="profileUsername" class="text-base font-semibold text-[#22D3EE]  ">@SOUFIANE-BOUSHABA</p>
+    <p id="profileBio" class="text-base mt-2 text-zinc-400 text-semiblod">Full stack web développeur</p>
+  </div>
+
+
+  <div class="rounded-2xl text-sm  text-zinc-300  bg-[#1B253B] px-6 py-2">
+    <p>
+      <i class="fa-solid fa-location-dot text-[#EC4899]"></i>
+      <span id="profileLocation ">Marrakech, Morocco</span>
+    </p>
+
+    <p>
+      <i class="fa-regular fa-calendar-days text-blue-500"></i>
+      Membre depuis
+      <span id="profileJoined">janvier 2021</span>
+    </p>
+  </div>
+
+  <div class="grid grid-cols-3 gap-3 mt-5">
+
+    <div class=" text-[#22D3EE] rounded-xl bg-[#22D3EE]/20 w-28 text-center border-1 border-[#22D3EE]">
+      <h3 id="profileRepos" class="text-3xl font-bold">64</h3>
+      <p class="text-sm">DÉPÔTS</p>
+    </div>
+
+    <div class=" text-[#EC4899] rounded-xl bg-[#EC4899]/20 w-28 text-center border-1 border-[#EC4899]">
+      <h3 id="profileFollowers" class="text-3xl font-bold">95</h3>
+      <p class="text-sm">ABONNÉS</p>
+    </div>
+
+    <div  class=" text-[#C084FC] rounded-xl bg-[#C084FC]/20 w-28 text-center border-1 border-[#C084FC]">
+      <h3 id="profileFollowing" class="text-3xl font-bold">18</h3>
+      <p class="text-sm text-zinc-300">ABONNEMENTS</p>
+    </div>
+
+  </div>
+
+
+  <div class="flex flex-col gap-3 my-4">
+    <button id="addShortlist" type="button" class="w-full py-3 px-3 cursor-pointer rounded-xl font-bold text-white bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 shadow-lg shadow-purple-500/20">
+      <i class="fa-regular fa-star"></i>
+      Ajouter à la shortlist
+    </button>
+
+    <a id="githubProfileLink"
+    class="w-full flex justify-center items-center gap-3 py-3  px-10 rounded-xl border border-cyan-400 text-cyan-400 hover:bg-cyan-400/10 transition"
+       href="#"
+       target="_blank"
+       rel="noopener noreferrer">
+      Voir le profil original
+      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+    </a>
+  </div>
+ 
+</aside>
+<hr class=" h-50 w-3 text-black">
+    </aside>
+
+  
+    <section class="	min-w-0 flex-1 mt-6 px-7" >
+
+  <div class="flex items-center justify-between">
+    <div class="flex items-center justify-between gap-4">
+      <i class="fa-solid fa-layer-group text-[#C084FC] text-2xl"></i>
+      <h2 class="text-2xl text-zinc-300 font-bold">Dépôts</h2>
+      <span id="reposCount" class="px-3 font-bold rounded-full text-[#22D3EE] bg-[#22D3EE]/50">64</span>
+    </div>
+
+
+    <div class=" bg-[#151C30] text-white border border-[#334155] rounded-xl px-3 py-2 outline-none">
+      <label for="repoSort" class="px-4 py-3 rounded-xl text-zinc-400 font-semibold">Trier par :</label>
+
+      <select id="repoSort">
+        <option value="updated">Plus récents</option>
+   
+      </select>
+    </div>
+  </div>
+
+
+  <div id="reposGrid" class="grid grid-cols-2 xl:grid-cols-2 gap-4 mt-6">
+
+
+    <article  class="rounded-2xl p-1 pt-1 bg-[#111B30] border border-slate-700/60 hover:border-cyan-400/60 hover:shadow-lg hover:shadow-cyan-500/10  transition-all duration-300">
+
+      <div class="rounded-2xl p-5 pb-0 pt-0 flex justify-between items-center ">
+        <div class="flex gap-4 items-center">
+          <i class="fa-regular fa-folder text-xl text-[#22D3EE]"></i>
+          <h3 class="text-lg font-bold text-2xl text-zinc-300">concepts_js</h3>
+        </div>
+
+        <a href="#" target="_blank"
+           rel="noopener noreferrer"   class="w-15 h-15 flex items-center justify-center rounded-xl bg-slate-800border border-slate-700 text-white hover:text-cyan-400"
+           aria-label="Voir le dépôt sur GitHub">
+          <i class="fa-brands fa-github text-2xl"></i>
+        </a>
+      </div>
+
+      <p class="text-base  text-zinc-400 text-sm text-semibold text-center ">Aucune description.</p>
+
+    
+      <div class="flex items-center gap-4 mt-4 text-center ml-14">
+        <span class="text-zinc-300 ">
+          <i class="fa-solid fa-circle text-sm "></i>
+          JavaScript
+        </span>
+
+        <span class="text-amber-500">
+          <i class="fa-solid fa-star"></i>
+          1
+        </span>
+
+        <span class="text-[#22D3EE]">
+          <i class="fa-solid fa-code-fork"></i>
+          0
+        </span>
+      </div>
+
+      
+      <p class="	text-sm mt-4 text-zinc-400 text-center" >
+        <i class="fa-regular fa-calendar-days"></i>
+        Mis à jour il y a 50 jours
+      </p>
+
+    </article>
+
+       <article  class="rounded-2xl p-1 pt-1 bg-[#111B30] border border-slate-700/60 hover:border-cyan-400/60 hover:shadow-lg hover:shadow-cyan-500/10  transition-all duration-300">
+
+      <div class="rounded-2xl p-5 pb-0 pt-0 flex justify-between items-center ">
+        <div class="flex gap-4 items-center">
+          <i class="fa-regular fa-folder text-xl text-[#22D3EE]"></i>
+          <h3 class="text-lg font-bold text-2xl text-zinc-300">concepts_js</h3>
+        </div>
+
+        <a href="#" target="_blank"
+           rel="noopener noreferrer"   class="w-15 h-15 flex items-center justify-center rounded-xl bg-slate-800border border-slate-700 text-white hover:text-cyan-400"
+           aria-label="Voir le dépôt sur GitHub">
+          <i class="fa-brands fa-github text-2xl"></i>
+        </a>
+      </div>
+
+      <p class="text-base  text-zinc-400 text-sm text-semibold text-center ">Aucune description.</p>
+
+    
+      <div class="flex items-center gap-4 mt-4 text-center ml-14">
+        <span class="text-zinc-300 ">
+          <i class="fa-solid fa-circle text-sm "></i>
+          JavaScript
+        </span>
+
+        <span class="text-amber-500">
+          <i class="fa-solid fa-star"></i>
+          1
+        </span>
+
+        <span class="text-[#22D3EE]">
+          <i class="fa-solid fa-code-fork"></i>
+          0
+        </span>
+      </div>
+
+      
+      <p class="	text-sm mt-4 text-zinc-400 text-center" >
+        <i class="fa-regular fa-calendar-days"></i>
+        Mis à jour il y a 50 jours
+      </p>
+
+    </article>
+
+  </div>
+
+</section>
+
+  </div>
+</main>
+</body>
+</html>

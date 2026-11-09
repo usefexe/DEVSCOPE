@@ -3,9 +3,215 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>DEVScope|home</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <script src="./js/index.js" defer type="module"></script>
 </head>
-<body>
+<body  class="bg-[url('./imgs/backround.png')] bg-no-repeat bg-cover bg-center w-full h-screen  bg-fixed
+             min-h-screen" >
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <header class=" max-w-[900px] ml-40 h-18 mt-[30px] px-6   " >
+  <nav class="flex  justify-between bg-[#080D1B] font-sans rounded-[20px] border-[#22D3EE] px-6 items-center">
+     
+    <div>
+        <img src="./imgs/logog.png" alt="logo-devScop" class="w-40" >
     
+    </div>
+
+    <!-- Navigation -->
+    <ul class=" flex gap-9 text-sm">
+      <li><a href="#" class="bg-cyan-500/20 text-cyan-400 px-5 py-2 rounded-xl font-semibold">Accueil</a></li>
+      <li><a href="#" class="text-slate-200 hover:text-cyan-400 transition-colors font-semibold">Recherche</a></li>
+      <li><a href="#" class="text-slate-200 hover:text-cyan-400 transition-colors font-semibold" >Shortlist</a></li>
+    </ul>
+
+    <!-- Actions -->
+    <div>
+     
+      <button class="bg-gradient-to-r from-cyan-400 to-pink-500
+       text-white font-semibold px-5 py-1 rounded-xl">Se connecter</button>
+    </div>
+  </nav>
+</header>
+
+
+<section class="pt-10 max-w-[1280px] mx-auto px-37 ">
+  <div>
+    <!-- Badge -->
+    <div class="text-sm px-4 py-2 rounded-full bg-[#080F28] w-80">
+      <i class="fa-solid fa-star text-yellow-600"></i>
+      <span class="text-zinc-300 font-semibold">Plateforme d'analyse de développeurs</span>
+    </div>
+
+    <!-- Titre principal -->
+    <h1 class="text-5xl font-extrabold leading-tight text-zinc-300">
+      Trouvez les meilleurs <br>
+      développeurs grâce à <br>leur 
+      <span class="bg-gradient-to-r from-purple-500
+       to-pink-500 bg-clip-text text-transparent">code</span>
+    </h1>
+
+    <!-- Description -->
+    <p 	class="	text-l leading-4 text-zinc-300 font-semibold">
+      Analysez un <span class="text-[#22D3EE]">profil</span>,
+      ses <span class="text-[#FBBF24]">projets</span> et ses 
+      <span class="text-[#EC4899]">langages</span> <br> en quelques secondes.
+    </p>
+
+    <!-- Barre de recherche -->
+    <form class="mt-4" id="foorm">
+      <div class="	h-[50px] rounded-2xl bg-[#080F28] w-120 flex items-center px-4 border-blue-500">
+        <i class="fa-solid fa-magnifying-glass text-[#22D3EE] text-l"></i>
+
+        <input class="placeholder:text-gray-400 placeholder:text-semibold ml-5    focus:border-blue-500
+         focus:outline-none
+         focus:ring-0
+          focus:text-zinc-300
+          focus:text-semibold
+         "
+         id="search"
+          type="text"
+          placeholder="Entrez un nom d'utilisateur GitHub..."
+          aria-label="Nom d'utilisateur GitHub"
+          required
+        />
+
+        <button type="submit" id="submmit" class="bg-gradient-to-r from-cyan-400 
+       to-pink-500 text-white font-semibold 	px-7 py-2 rounded-xl ml-21  cursor-pointer hover:px-8">
+          Analyser
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+       <p id="searchError" class="text-red-700 ml-10 hidden" >
+    <i class="fa-solid fa-circle-exclamation"></i>
+    Veuillez saisir un nom d'utilisateur GitHub valide.
+  </p>
+    </form>
+
+    <!-- Suggestions -->
+    <div  class="mt-5 flex gap-3">
+      <span class="font-semibold text-zinc-300 ">Exemples :</span>
+
+      <button type="button" class="bg-slate-800/70 border border-slate-700
+       rounded-full text-cyan-400 px-4 text-sm font-semibold">
+        <i class="fa-brands fa-github"></i>
+        octocat
+      </button>
+
+      <button type="button" class="bg-slate-800/70 border border-slate-700
+       rounded-full text-cyan-400 px-4 text-sm font-semibold">
+        <i class="fa-brands fa-github"></i>
+        torvalds
+      </button>
+
+      <button type="button" class="bg-slate-800/70 border border-slate-700
+       rounded-full text-cyan-400 px-4 text-sm font-semibold">
+        <i class="fa-brands fa-github"></i>
+        devscope
+      </button>
+    </div>
+  </div>
+</section>
+<section class="mx-24 my-10">
+  <div class=" grid grid-cols-4  max-w-[1300px] mx-auto h-[76px] bg-[#151C30] 	rounded-2xl 	border border-[#334155] items-center">
+
+    <!-- Profils analysés -->
+    <div class="flex px-8 items-center gap-3">
+      <i class="fa-solid fa-users text-2xl text-[#A78BFA]"></i>
+      <div>
+        <h3 class="text-[#F1F5F9] text-xl font-bold ">10k+</h3>
+        <p class="	text-sm text-[#CBD5E1]">Profils analysés</p>
+      </div>
+    </div>
+
+    <!-- Projets scannés -->
+    <div class="flex px-8 items-center gap-3">
+      <i class="fa-solid fa-code  text-2xl text-[#22D3EE]"></i>
+      <div>
+        <h3 class="text-[#F1F5F9] text-xl font-bold ">50k+</h3>
+        <p class="	text-sm text-[#CBD5E1]">Projets scannés</p>
+      </div>
+    </div>
+
+    <!-- Langages détectés -->
+    <div class="flex px-8 items-center gap-3">
+      <i class="fa-solid fa-layer-group text-2xl text-[#A855F7]"></i>
+      <div>
+        <h3 class="text-[#F1F5F9] text-xl font-bold ">20+</h3>
+        <p  class="	text-sm text-[#CBD5E1]">Langages détectés</p>
+      </div>
+    </div>
+
+    <!-- Analyse instantanée -->
+    <div class="flex px-8 items-center gap-3">
+      <i class="fa-solid fa-bolt  text-2xl text-[#FB923C]"></i>
+      <div>
+        <h3 class="text-[#F1F5F9] text-xl font-bold ">&lt; 5s</h3>
+        <p class="	text-sm text-[#CBD5E1]">Analyse instantanée</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="max-w-[1300px] mt-10 pb-10 mx-40 text-[#F1F5F9] ">
+  <!-- Titre de section -->
+  <div class="flex items-center justify-center gap-6">
+    <span class="h-[2px] w-[230px]
+       bg-gradient-to-r from-transparent to-purple-500"></span>
+    <h2 class="text-3xl font-bold">Comment ça marche ?</h2>
+    <span class="h-[2px] w-[230px]
+       bg-gradient-to-r from-pink-500 to-transparent"></span>
+  </div>
+
+  <!-- Les étapes -->
+  <div class="flex items-center justify-between mt-8">
+
+    <!-- Étape 1 -->
+    <div class="flex items-center gap-4">
+      <div class="w-16 h-16 rounded-full flex items-center
+       justify-center bg-cyan-500/20
+       border border-cyan-400/30 text-cyan-400">
+        <i class="fa-solid fa-magnifying-glass text-2xl"></i>
+      </div>
+      <div>
+        <h3 class="	text-base font-bold text-[#F1F5F9]">1. Recherchez</h3>
+        <p class="text-sm text-[#CBD5E1]">Un développeur par son nom</p>
+      </div>
+    </div>
+
+    <i class="fa-solid fa-arrow-right text-lg"></i>
+
+    <!-- Étape 2 -->
+    <div class="flex items-center gap-4">
+      <div class="w-16 h-16 rounded-full flex items-center
+       justify-center bg-purple-500/20
+       border border-purple-400/30 text-purple-400">
+        <i class="fa-solid fa-chart-column 	text-2xl"></i>
+      </div>
+      <div>
+        <h3 class="	text-base font-bold text-[#F1F5F9]">2. Analysez</h3>
+        <p class="text-sm text-[#CBD5E1]">Son profil, ses projets et langages</p>
+      </div>
+    </div>
+
+    <i class="fa-solid fa-arrow-right text-lg"></i>
+
+    <!-- Étape 3 -->
+    <div class="flex items-center gap-4">
+      <div class="w-16 h-16 rounded-full flex items-center
+       justify-center bg-pink-500/20
+       border border-pink-400/30 text-pink-400">
+        <i class="fa-regular fa-bookmark 	text-2xl"></i>
+      </div>
+      <div>
+        <h3 class="	text-base font-bold text-[#F1F5F9]">3. Enregistrez</h3>
+        <p class="text-sm text-[#CBD5E1]">Ajoutez-le à votre shortlist</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 </body>
 </html>

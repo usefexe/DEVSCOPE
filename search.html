@@ -37,7 +37,7 @@
 <!-- </search> -->
 
 <section class="max-w-[1400px] mx-auto mt-7">
-  <form>
+  <form id="foorm">
     <div class="h-16 flex items-center gap-5 px-5 bg-[#101626] border border-[#293047] rounded-2xl mx-20">
       <i class="fa-solid fa-magnifying-glass text-[#22D3EE] text-xl"></i>
 
@@ -55,16 +55,19 @@
         Rechercher
       </button>
     </div>
-
+   <p id="searchError" class="text-red-700 ml-10 hidden" >
+    <i class="fa-solid fa-circle-exclamation"></i>
+    Veuillez saisir un nom d'utilisateur GitHub valide.
+  </p>
 
   </form>
 </section>
- <main class="">
+ <main class="hidden" id="profile">
   <div class="grid grid-cols-1 lg:grid-cols-[400px_1fr] gap-6 max-w-[1100px] mx-auto border-2 my-10 mb-10 mx-20 rounded-2xl border-purple-400 ">
    
     <!-- Profile Card -->
- <aside class="flex gap-3">
-      <aside class=" grid justify-items-center">
+ <aside class="flex gap-3 p-5 pl-2 bg-[#111B30] m-4 rounded-2xl">
+      <aside class=" grid justify-items-center ">
 
   <!-- Avatar et identité -->
   <div class="rounded-3xl p-6  grid justify-items-center">
@@ -78,26 +81,26 @@
       alt="Photo de profil GitHub"
     /></div>
 
-    <h2 id="profileName" class="text-3xl font-bold text-zinc-300 ">soufiane boushaba</h2>
+    <h2 id="profileName" class="text-3xl font-bold text-zinc-300 text-center ">soufiane boushaba</h2>
     <p id="profileUsername" class="text-base font-semibold text-[#22D3EE]  ">@SOUFIANE-BOUSHABA</p>
     <p id="profileBio" class="text-base mt-2 text-zinc-400 text-semiblod">Full stack web développeur</p>
   </div>
 
 
-  <div class="rounded-2xl text-sm  text-zinc-300  bg-[#1B253B] px-6 py-2">
+  <div class="rounded-2xl text-sm  text-zinc-300  bg-[#1B253B] px-6 py-2 text-center">
     <p>
-      <i class="fa-solid fa-location-dot text-[#EC4899]"></i>
-      <span id="profileLocation ">Marrakech, Morocco</span>
+      <i class="fa-solid fa-location-dot text-[#EC4899] "></i>
+      <span id="profileLocation">Marrakech, Morocco</span>
     </p>
 
     <p>
-      <i class="fa-regular fa-calendar-days text-blue-500"></i>
-      Membre depuis
+      <i class="fa-regular fa-calendar-days text-blue-50 0"></i>
+     
       <span id="profileJoined">janvier 2021</span>
     </p>
   </div>
 
-  <div class="grid grid-cols-3 gap-3 mt-5">
+  <div class="grid grid-cols-3 gap-5 mt-5 ">
 
     <div class=" text-[#22D3EE] rounded-xl bg-[#22D3EE]/20 w-28 text-center border-1 border-[#22D3EE]">
       <h3 id="profileRepos" class="text-3xl font-bold">64</h3>
@@ -134,7 +137,7 @@
   </div>
  
 </aside>
-<hr class=" h-50 w-3 text-black">
+
     </aside>
 
   
@@ -159,7 +162,7 @@
   </div>
 
 
-  <div id="reposGrid" class="grid grid-cols-2 xl:grid-cols-2 gap-4 mt-6">
+  <div id="reposGrid" class="grid grid-cols-2 xl:grid-cols-2 gap-4 mt-6 overflow-y-auto max-h-140 overflow-x-hidden">
 
 
     <article  class="rounded-2xl p-1 pt-1 bg-[#111B30] border border-slate-700/60 hover:border-cyan-400/60 hover:shadow-lg hover:shadow-cyan-500/10  transition-all duration-300">
@@ -254,5 +257,88 @@
 
   </div>
 </main>
+
+
+
+  <!-- Message d'erreur -->
+  <div id="notFound"
+       role="alert"
+       class="hidden  absolute inset-0 z-20 rounded-3xl border border-[#293047] bg-[#0D1120] flex-col max-h-60 mt-55 items-center flex  justify-center mx-10 gap-6 px-6 py-14 text-center">
+
+ 
+    <div class="w-20 h-20 rounded-full flex items-center justify-center border border-rose-500/50 bg-[#0D1120] shadow-[0_0_35px_rgba(236,72,153,0.18)]">
+
+      <i class="fa-solid fa-exclamation text-3xl  py-6 px-6 text-[#FB7185] text-center"></i>
+    </div>
+
+
+    <div class="max-w-[500px]">
+      <h2 class="text-xl md:text-2xl font-bold text-[#F1F5F9] leading-relaxed">
+        Aucun développeur trouvé.
+      </h2>
+
+      <p class="mt-2 text-[#94A3B8] text-base">
+        Vérifiez le nom d'utilisateur GitHub
+        et réessayez.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Loading State -->
+<div id="loadingState"
+     role="status"
+     aria-live="polite"
+     class=" absolute inset-0 z-20
+            rounded-3xl border border-[#293047]
+            bg-[#0D1120] flex max-h-60 mt-55 mx-5 hidden
+            flex-col items-center justify-center
+            gap-5 px-6 py-12 text-center">
+
+  <!-- Spinner -->
+  <div class="relative w-20 h-20
+              flex items-center justify-center">
+
+    <div class="absolute inset-0 rounded-full
+                border-4 border-[#263249]
+                border-t-cyan-400
+                border-r-purple-500
+                animate-spin">
+    </div>
+
+    <i class="fa-solid fa-code
+              text-2xl text-cyan-400 px-7 py-7"></i>
+  </div>
+
+  <!-- Message -->
+  <div>
+    <h2 class="text-xl md:text-2xl
+               font-bold text-[#F1F5F9]">
+      Analyse du profil en cours...
+    </h2>
+
+    <p class="mt-3 text-[#94A3B8] text-base">
+      Récupération des données GitHub,
+      veuillez patienter.
+    </p>
+  </div>
+
+  <!-- Animated dots -->
+  <div class="flex items-center gap-2">
+
+    <span class="w-2 h-2 rounded-full
+                 bg-cyan-400 animate-bounce"></span>
+
+    <span class="w-2 h-2 rounded-full
+                 bg-purple-500 animate-bounce
+                 [animation-delay:150ms]"></span>
+
+    <span class="w-2 h-2 rounded-full
+                 bg-pink-500 animate-bounce
+                 [animation-delay:300ms]"></span>
+
+  </div>
+</div>
+
 </body>
 </html>

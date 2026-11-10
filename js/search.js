@@ -1,2 +1,2 @@
-
-console.log(JSON.parse(localStorage.getItem('serch')))
+import manageSearchPage from "./ui/manageserch.js";
+manageSearchPage()

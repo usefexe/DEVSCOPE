@@ -17,9 +17,9 @@ export function showUser(uerdata) {
   document.getElementById("profileName").textContent = uerdata.login;
   document.getElementById("profileUsername").textContent = `@${uerdata.login}`;
   document.getElementById("profileBio").textContent =
-    uerdata.bio || "introuvable bio";
+  uerdata.bio || "introuvable bio";
   document.getElementById("profileLocation").textContent =
-    uerdata.location || "introuvable location ";
+  uerdata.location || "introuvable location ";
   document.getElementById("profileJoined").textContent = membreDepuis(
     uerdata.created_at,
   );

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEVScope|search</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <script src="./js/search.js" defer type="module"></script>
+</head>
+<body  class="bg-[url('./imgs/backround2.png')] bg-no-repeat bg-cover bg-center w-full min-h-screen  bg-fixed
+             min-h-screen pb-20" >
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <header class=" max-w-[900px] ml-40 h-18 mt-[30px] px-6   " >
+  <nav class="flex  justify-between bg-[#080D1B] font-sans rounded-[20px] border-[#22D3EE] px-6 items-center">
+     
+    <div>
+        <img src="./imgs/logog.png" alt="logo-devScop" class="w-40" >
+    
+    </div>
+
+    <!-- Navigation -->
+    <ul class=" flex gap-9 text-sm">
+      <li><a href="./index.html" class="text-slate-200 hover:text-cyan-400 transition-colors font-semibold">Accueil</a></li>
+      <li><a  href="./search.html" class="bg-cyan-500/20 text-cyan-400 px-5 py-2 rounded-xl font-semibold">Recherche</a></li>
+      <li><a href="./shortlist.html" class="text-slate-200 hover:text-cyan-400 transition-colors font-semibold" >Shortlist</a></li>
+    </ul>
+
+    <!-- Actions -->
+    <div>
+     
+      <button class="bg-gradient-to-r from-cyan-400 to-pink-500
+       text-white font-semibold px-5 py-1 rounded-xl">Se connecter</button>
+    </div>
+  </nav>
+</header>
+
+<!-- </search> -->
+
+<section class="max-w-[1400px] mx-auto mt-7">
+  <form id="foorm">
+    <div class="h-16 flex items-center gap-5 px-5 bg-[#101626] border border-[#293047] rounded-2xl mx-20">
+      <i class="fa-solid fa-magnifying-glass text-[#22D3EE] text-xl"></i>
+
+      <input
+      class="flex-1 bg-transparent outline-none placeholder:text-[#F1F5F9] placeholder:font-medium text-zinc-300 text-semibold "
+        type="text"
+        id="githubUsername"
+        placeholder="Rechercher un développeur GitHub..."
+        value="soufiane-boushaba"
+        aria-label="Nom d'utilisateur GitHub"
+      />
+
+      <button type="submit" class="px-6 py-2 rounded-xl text-semibold text-zinc-300 bg-gradient-to-r from-cyan-400 to-pink-500  hover:opacity-90 transition">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        Rechercher
+      </button>
+    </div>
+   <p id="searchError" class="text-red-700 ml-10 hidden" >
+    <i class="fa-solid fa-circle-exclamation"></i>
+    Veuillez saisir un nom d'utilisateur GitHub valide.
+  </p>
+
+  </form>
+</section>
+ <main class="hidden" id="profile">
+  <div class="grid grid-cols-1 lg:grid-cols-[400px_1fr] gap-6 max-w-[1100px] mx-auto border-2 my-10 mb-10 mx-20 rounded-2xl border-purple-400 ">
+   
+    <!-- Profile Card -->
+ <aside class="flex gap-3 p-5 pl-2 bg-[#111B30] m-4 rounded-2xl">
+      <aside class=" grid justify-items-center ">
+
+  <!-- Avatar et identité -->
+  <div class="rounded-3xl p-6  grid justify-items-center">
+    <div class="p-[3px] rounded-full w-36
+            bg-gradient-to-br from-pink-500
+            via-purple-500 to-cyan-400">
+    <img
+    class="w-36 h-36 rounded-full object-cover"
+      id="profileAvatar"
+      src="./imgs/profile.jpg"
+      alt="Photo de profil GitHub"
+    /></div>
+
+    <h2 id="profileName" class="text-3xl font-bold text-zinc-300 text-center ">soufiane boushaba</h2>
+    <p id="profileUsername" class="text-base font-semibold text-[#22D3EE] text-center  ">@SOUFIANE-BOUSHABA</p>
+    <p id="profileBio" class="text-base mt-2 text-zinc-400 text-semiblod text-center">Full stack web développeur</p>
+  </div>
+
+
+  <div class="rounded-2xl text-sm  text-zinc-300  bg-[#1B253B] px-6 py-2 text-center">
+    <p>
+      <i class="fa-solid fa-location-dot text-[#EC4899] "></i>
+      <span id="profileLocation">Marrakech, Morocco</span>
+    </p>
+
+    <p>
+      <i class="fa-regular fa-calendar-days text-blue-50 0"></i>
+     
+      <span id="profileJoined">janvier 2021</span>
+    </p>
+  </div>
+
+  <div class="grid grid-cols-3 gap-5 mt-5 ">
+
+    <div class=" text-[#22D3EE] rounded-xl bg-[#22D3EE]/20 w-28 text-center border-1 border-[#22D3EE]">
+      <h3 id="profileRepos" class="text-3xl font-bold">64</h3>
+      <p class="text-sm">DÉPÔTS</p>
+    </div>
+
+    <div class=" text-[#EC4899] rounded-xl bg-[#EC4899]/20 w-28 text-center border-1 border-[#EC4899]">
+      <h3 id="profileFollowers" class="text-3xl font-bold">95</h3>
+      <p class="text-sm">ABONNÉS</p>
+    </div>
+
+    <div  class=" text-[#C084FC] rounded-xl bg-[#C084FC]/20 w-28 text-center border-1 border-[#C084FC]">
+      <h3 id="profileFollowing" class="text-3xl font-bold">18</h3>
+      <p class="text-sm text-zinc-300">ABONNEMENTS</p>
+    </div>
+
+  </div>
+
+
+  <div class="flex flex-col gap-3 my-4">
+    <button id="addShortlist" type="button" class="w-full py-3 px-3 hover:opacity-90 cursor-pointer rounded-xl font-bold text-white bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 shadow-lg shadow-purple-500/20">
+      <i class="fa-regular fa-star"></i>
+      Ajouter à la shortlist
+    </button>
+
+    <a id="githubProfileLink"
+    class="w-full flex justify-center items-center gap-3 py-3  px-10 rounded-xl border border-cyan-400 text-cyan-400 hover:bg-cyan-400/10 transition"
+       href="#"
+       target="_blank"
+       rel="noopener noreferrer">
+      Voir le profil original
+      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+    </a>
+  </div>
+ 
+</aside>
+
+    </aside>
+
+  
+    <section class="	min-w-0 flex-1 mt-6 px-7" >
+
+  <div class="flex items-center justify-between">
+    <div class="flex items-center justify-between gap-4">
+      <i class="fa-solid fa-layer-group text-[#C084FC] text-2xl"></i>
+      <h2 class="text-2xl text-zinc-300 font-bold">Dépôts</h2>
+      <span id="reposCount" class="px-3 font-bold rounded-full text-[#22D3EE] bg-[#22D3EE]/50">64</span>
+    </div>
+
+
+    <div class=" bg-[#151C30] text-white border border-[#334155] rounded-xl px-3 py-2 outline-none">
+      <label for="repoSort" class="px-4 py-3 rounded-xl text-zinc-400 font-semibold">Trier par :</label>
+
+      <select id="repoSort">
+        <option value="updated">Plus récents</option>
+   
+      </select>
+    </div>
+  </div>
+
+
+  <div id="reposGrid" class="grid grid-cols-2 xl:grid-cols-2 gap-4 mt-6 overflow-y-auto max-h-140 overflow-x-hidden">
+
+
+    <article  class="rounded-2xl p-1 pt-1 bg-[#111B30] border border-slate-700/60 hover:border-cyan-400/60 hover:shadow-lg hover:shadow-cyan-500/10  transition-all duration-300">
+
+      <div class="rounded-2xl p-5 pb-0 pt-0 flex justify-between items-center ">
+        <div class="flex gap-4 items-center">
+          <i class="fa-regular fa-folder text-xl text-[#22D3EE]"></i>
+          <h3 class="text-lg font-bold text-2xl text-zinc-300">concepts_js</h3>
+        </div>
+
+        <a href="#" target="_blank"
+           rel="noopener noreferrer"   class="w-15 h-15 flex items-center justify-center rounded-xl bg-slate-800border border-slate-700 text-white hover:text-cyan-400"
+           aria-label="Voir le dépôt sur GitHub">
+          <i class="fa-brands fa-github text-2xl"></i>
+        </a>
+      </div>
+
+      <p class="text-base  text-zinc-400 text-sm text-semibold text-center ">Aucune description.</p>
+
+    
+      <div class="flex items-center gap-4 mt-4 text-center ml-14">
+        <span class="text-zinc-300 ">
+          <i class="fa-solid fa-circle text-sm "></i>
+          JavaScript
+        </span>
+
+        <span class="text-amber-500">
+          <i class="fa-solid fa-star"></i>
+          1
+        </span>
+
+        <span class="text-[#22D3EE]">
+          <i class="fa-solid fa-code-fork"></i>
+          0
+        </span>
+      </div>
+
+      
+      <p class="	text-sm mt-4 text-zinc-400 text-center" >
+        <i class="fa-regular fa-calendar-days"></i>
+        Mis à jour il y a 50 jours
+      </p>
+
+    </article>
+
+       <article  class="rounded-2xl p-1 pt-1 bg-[#111B30] border border-slate-700/60 hover:border-cyan-400/60 hover:shadow-lg hover:shadow-cyan-500/10  transition-all duration-300">
+
+      <div class="rounded-2xl p-5 pb-0 pt-0 flex justify-between items-center ">
+        <div class="flex gap-4 items-center">
+          <i class="fa-regular fa-folder text-xl text-[#22D3EE]"></i>
+          <h3 class="text-lg font-bold text-2xl text-zinc-300">concepts_js</h3>
+        </div>
+
+        <a href="#" target="_blank"
+           rel="noopener noreferrer"   class="w-15 h-15 flex items-center justify-center rounded-xl bg-slate-800border border-slate-700 text-white hover:text-cyan-400"
+           aria-label="Voir le dépôt sur GitHub">
+          <i class="fa-brands fa-github text-2xl"></i>
+        </a>
+      </div>
+
+      <p class="text-base  text-zinc-400 text-sm text-semibold text-center ">Aucune description.</p>
+
+    
+      <div class="flex items-center gap-4 mt-4 text-center ml-14">
+        <span class="text-zinc-300 ">
+          <i class="fa-solid fa-circle text-sm "></i>
+          JavaScript
+        </span>
+
+        <span class="text-amber-500">
+          <i class="fa-solid fa-star"></i>
+          1
+        </span>
+
+        <span class="text-[#22D3EE]">
+          <i class="fa-solid fa-code-fork"></i>
+          0
+        </span>
+      </div>
+
+      
+      <p class="	text-sm mt-4 text-zinc-400 text-center" >
+        <i class="fa-regular fa-calendar-days"></i>
+        Mis à jour il y a 50 jours
+      </p>
+
+    </article>
+
+  </div>
+
+</section>
+
+  </div>
+</main>
+
+
+
+  <!-- Message d'erreur -->
+  <div id="notFound"
+       role="alert"
+       class="hidden  absolute inset-0 z-20 rounded-3xl border border-[#293047] bg-[#0D1120] flex-col max-h-60 mt-55 items-center flex  justify-center mx-10 gap-6 px-6 py-14 text-center">
+
+ 
+    <div class="w-20 h-20 rounded-full flex items-center justify-center border border-rose-500/50 bg-[#0D1120] shadow-[0_0_35px_rgba(236,72,153,0.18)]">
+
+      <i class="fa-solid fa-exclamation text-3xl  py-6 px-6 text-[#FB7185] text-center"></i>
+    </div>
+
+
+    <div class="max-w-[500px]">
+      <h2 class="text-xl md:text-2xl font-bold text-[#F1F5F9] leading-relaxed">
+        Aucun développeur trouvé.
+      </h2>
+
+      <p class="mt-2 text-[#94A3B8] text-base">
+        Vérifiez le nom d'utilisateur GitHub
+        et réessayez.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Loading State -->
+<div id="loadingState"
+     role="status"
+     aria-live="polite"
+     class=" absolute inset-0 z-20
+            rounded-3xl border border-[#293047]
+            bg-[#0D1120] flex max-h-60 mt-55 mx-5 hidden
+            flex-col items-center justify-center
+            gap-5 px-6 py-12 text-center">
+
+  <!-- Spinner -->
+  <div class="relative w-20 h-20
+              flex items-center justify-center">
+
+    <div class="absolute inset-0 rounded-full
+                border-4 border-[#263249]
+                border-t-cyan-400
+                border-r-purple-500
+                animate-spin">
+    </div>
+
+    <i class="fa-solid fa-code
+              text-2xl text-cyan-400 px-7 py-7"></i>
+  </div>
+
+  <!-- Message -->
+  <div>
+    <h2 class="text-xl md:text-2xl
+               font-bold text-[#F1F5F9]">
+      Analyse du profil en cours...
+    </h2>
+
+    <p class="mt-3 text-[#94A3B8] text-base">
+      Récupération des données GitHub,
+      veuillez patienter.
+    </p>
+  </div>
+
+  <!-- Animated dots -->
+  <div class="flex items-center gap-2">
+
+    <span class="w-2 h-2 rounded-full
+                 bg-cyan-400 animate-bounce"></span>
+
+    <span class="w-2 h-2 rounded-full
+                 bg-purple-500 animate-bounce
+                 [animation-delay:150ms]"></span>
+
+    <span class="w-2 h-2 rounded-full
+                 bg-pink-500 animate-bounce
+                 [animation-delay:300ms]"></span>
+
+  </div>
+</div>
+  <div id="assignSuccess"
+    class="fixed top-20 right-5 z-[200] hidden
+           items-center gap-3
+           rounded-xl border border-emerald-400/40
+           bg-emerald-950 px-5 py-4
+           shadow-2xl shadow-green-900/40
+           transition-all duration-500
+           opacity-0 translate-x-10">
+
+    <div class="flex h-11 w-11 items-center justify-center
+                rounded-full bg-green-500/20">
+        <i class="fa-solid fa-circle-check
+                  text-3xl text-green-400"></i>
+    </div>
+
+    <div>
+        <h3 class="font-bold text-white">
+            devlopeur ajouter  !
+        </h3>
+        <p class="text-sm text-green-200">
+           tu peux le trouver dans shortlist .
+        </p>
+    </div>
+</div>
+</body>
+</html>

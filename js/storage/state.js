@@ -1,3 +1,3 @@
-export const searchvalue={
-    name:null
+export const use={
+    profile:null,
 }

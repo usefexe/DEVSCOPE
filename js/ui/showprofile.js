@@ -1,5 +1,6 @@
 const loadingState = document.getElementById("loadingState");
 const notFound = document.getElementById("notFound");
+import { alredyExist } from "../validation/userExist.js";
 function membreDepuis(date) {
   const newDate = new Date(date);
 
@@ -15,11 +16,11 @@ export function showUser(uerdata) {
   profile.classList.remove("hidden");
   document.getElementById("profileAvatar").src = uerdata.avatar_url;
   document.getElementById("profileName").textContent = uerdata.login;
-  document.getElementById("profileUsername").textContent = `@${uerdata.login}`;
+  document.getElementById("profileUsername").textContent = `@${uerdata.name || uerdata.login}`;
   document.getElementById("profileBio").textContent =
-    uerdata.bio || "introuvable bio";
+  uerdata.bio || "introuvable bio";
   document.getElementById("profileLocation").textContent =
-    uerdata.location || "introuvable location ";
+  uerdata.location || "introuvable location ";
   document.getElementById("profileJoined").textContent = membreDepuis(
     uerdata.created_at,
   );
@@ -27,4 +28,15 @@ export function showUser(uerdata) {
   document.getElementById("profileFollowers").textContent = uerdata.followers;
   document.getElementById("profileFollowing").textContent = uerdata.following;
   document.getElementById("githubProfileLink").href = uerdata.html_url;
+const btn = document.getElementById('addShortlist')
+
+const existe = alredyExist(uerdata.login)
+
+btn.disabled = existe
+
+btn.classList.add("opacity-50", existe)
+btn.classList.toggle("cursor-not-allowed", existe)
+btn.classList.toggle("cursor-pointer", !existe)
+btn.classList.toggle("hover:opacity-90", !existe)
+
 }

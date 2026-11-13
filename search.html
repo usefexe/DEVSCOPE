@@ -21,8 +21,8 @@
     <!-- Navigation -->
     <ul class=" flex gap-9 text-sm">
       <li><a href="./index.html" class="text-slate-200 hover:text-cyan-400 transition-colors font-semibold">Accueil</a></li>
-      <li><a  class="bg-cyan-500/20 text-cyan-400 px-5 py-2 rounded-xl font-semibold">Recherche</a></li>
-      <li><a href="" class="text-slate-200 hover:text-cyan-400 transition-colors font-semibold" >Shortlist</a></li>
+      <li><a  href="./search.html" class="bg-cyan-500/20 text-cyan-400 px-5 py-2 rounded-xl font-semibold">Recherche</a></li>
+      <li><a href="./shortlist.html" class="text-slate-200 hover:text-cyan-400 transition-colors font-semibold" >Shortlist</a></li>
     </ul>
 
     <!-- Actions -->
@@ -82,8 +82,8 @@
     /></div>
 
     <h2 id="profileName" class="text-3xl font-bold text-zinc-300 text-center ">soufiane boushaba</h2>
-    <p id="profileUsername" class="text-base font-semibold text-[#22D3EE]  ">@SOUFIANE-BOUSHABA</p>
-    <p id="profileBio" class="text-base mt-2 text-zinc-400 text-semiblod">Full stack web développeur</p>
+    <p id="profileUsername" class="text-base font-semibold text-[#22D3EE] text-center  ">@SOUFIANE-BOUSHABA</p>
+    <p id="profileBio" class="text-base mt-2 text-zinc-400 text-semiblod text-center">Full stack web développeur</p>
   </div>
 
 
@@ -121,7 +121,7 @@
 
 
   <div class="flex flex-col gap-3 my-4">
-    <button id="addShortlist" type="button" class="w-full py-3 px-3 cursor-pointer rounded-xl font-bold text-white bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 shadow-lg shadow-purple-500/20">
+    <button id="addShortlist" type="button" class="w-full py-3 px-3 hover:opacity-90 cursor-pointer rounded-xl font-bold text-white bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 shadow-lg shadow-purple-500/20">
       <i class="fa-regular fa-star"></i>
       Ajouter à la shortlist
     </button>
@@ -339,6 +339,29 @@
 
   </div>
 </div>
+  <div id="assignSuccess"
+    class="fixed top-20 right-5 z-[200] hidden
+           items-center gap-3
+           rounded-xl border border-emerald-400/40
+           bg-emerald-950 px-5 py-4
+           shadow-2xl shadow-green-900/40
+           transition-all duration-500
+           opacity-0 translate-x-10">
 
+    <div class="flex h-11 w-11 items-center justify-center
+                rounded-full bg-green-500/20">
+        <i class="fa-solid fa-circle-check
+                  text-3xl text-green-400"></i>
+    </div>
+
+    <div>
+        <h3 class="font-bold text-white">
+            devlopeur ajouter  !
+        </h3>
+        <p class="text-sm text-green-200">
+           tu peux le trouver dans shortlist .
+        </p>
+    </div>
+</div>
 </body>
 </html>

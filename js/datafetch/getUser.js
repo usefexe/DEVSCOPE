@@ -9,21 +9,14 @@ export async function fetchDAta(user) {
     loadingState.classList.remove("hidden");
     const userfetch = await fetch(
       `https://api.github.com/users/${user}`,
-      {
-        headers: {
-          authorization: `Bearer ${""}`,
-        },
-      }
+      
+   
     );
     
     const datauser = await userfetch.json();
     const repodata = await fetch(
       `https://api.github.com/users/${user}/repos`,
-      {
-        headers: {
-          authorization: `Bearer ${""}`,
-        },
-      }
+    
     );
     const repos = await repodata.json();
     console.log(datauser);

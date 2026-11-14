@@ -2,8 +2,11 @@
 const shortlistContainer = document.getElementById('shortlistContainer')
 import { showStarCount } from "./showStarcount.js";
 import { getStatus } from "./getStatus.js";
+import { filter } from "../storage/state.js";
 
 export  function showShortList(users){
+
+  console.log(users)
         shortlistContainer.innerHTML=''
         users.forEach(element => {
             const div = document.createElement('article')

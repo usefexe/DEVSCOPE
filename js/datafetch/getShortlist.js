@@ -1,5 +1,6 @@
 import { showmpthySl } from "../ui/showempthyShort.js"
 import { showShortList } from "../ui/ShowShortList.js"
+import { filter } from "../storage/state.js"
 
 
 
@@ -10,9 +11,14 @@ try{
         if(!res.ok){
             showmpthySl() 
         }else{
-           showShortList(data) 
+            
+    let users = data.filter((el) => {
+    return el.login.toLowerCase().includes(filter.derachvalue.toLowerCase())
+})       
+showShortList(users) 
         }
     }catch(err){
         showmpthySl() 
+      
     }
 }

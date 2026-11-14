@@ -8,7 +8,7 @@ export function analyseProfile() {
     e.preventDefault();
     if (valideNom(input.value)) {
       searchError.classList.add("hidden");
-     
+      
       localStorage.setItem("serch", JSON.stringify(input.value));
       window.location.href = "search.html";
       searchError.classList.add("hidden");

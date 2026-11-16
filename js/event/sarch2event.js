@@ -11,7 +11,7 @@ export function cherheProfile() {
       searchError.classList.add("hidden");
 
       localStorage.setItem("serch", JSON.stringify(input.value));
-
+     
       fetchDAta(JSON.parse(localStorage.getItem("serch")));
       searchError.classList.add("hidden");
     } else {

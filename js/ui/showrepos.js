@@ -1,3 +1,4 @@
+import { profiles } from "../storage/state.js";
 function misAJourDepuis(date) {
   const dateModification = new Date(date);
   const aujourdHui = new Date();
@@ -9,7 +10,13 @@ function misAJourDepuis(date) {
   return `Mis à jour il y a ${jours} jours`;
 }
 
-export function showRepo(repos) {
+export function showRepo() {
+  const reposository= JSON.parse(localStorage.getItem('repos'))
+let repos =reposository.filter((el)=>{
+       const srch= el.name.toLowerCase().includes(profiles.search.toLowerCase())
+       const fltr=profiles.filter==='tous'||profiles.filter===el.language
+       return srch&&fltr
+    })
   document.getElementById("reposCount").textContent = repos.length;
   document.getElementById("reposGrid").innerHTML = "";
   repos.forEach((el) => {
@@ -67,4 +74,5 @@ export function showRepo(repos) {
       </p>`;
     document.getElementById("reposGrid").appendChild(article);
   });
+  
 }

@@ -149,13 +149,21 @@
       <h2 class="text-2xl text-zinc-300 font-bold">Dépôts</h2>
       <span id="reposCount" class="px-3 font-bold rounded-full text-[#22D3EE] bg-[#22D3EE]/50">64</span>
     </div>
+       <div class=" bg-[#151C30] text-white border border-[#334155] rounded-xl px-3 py-2 outline-none">
+    <input type="text" placeholder="chercher un depot" class="px-0 py-0 rounded-xl text-zinc-400 font-semibold  focus:outline-none focus:ring-0  focus:text-zinc-200 placeholder:text-bold placeholder:text-zinc-400 placeholder:text-l " id="searchrepo" >
+    </div>
+    
+    <div class=" bg-[#151C30] text-white border border-[#334155] rounded-xl px-2 py-2 outline-none flex">
+     <p class="text-zinc-300 text-xm text-bold ">lngague:</p>
 
-
-    <div class=" bg-[#151C30] text-white border border-[#334155] rounded-xl px-3 py-2 outline-none">
-      <label for="repoSort" class="px-4 py-3 rounded-xl text-zinc-400 font-semibold">Trier par :</label>
-
-      <select id="repoSort">
-        <option value="updated">Plus récents</option>
+      <select id="repoSort" class="text-black text-semibold ">
+        <option value="tous" class="bg-[#18181b] text-white text-center  px-1">All</option>
+        <option value="Html" class="bg-[#18181b] text-white text-center  px-1">html</option>
+        <option value="Java" class="bg-[#18181b] text-white text-center  px-1">java</option>
+        <option value="JavaScript" class="bg-[#18181b] text-white text-center px-1">JavaScript</option>
+        <option value="TypeScript" class="bg-[#18181b] text-white text-center px-1">typscript</option>
+        <option value="Python" class="bg-[#18181b] text-white text-center px-1">python</option>
+        <option value="PHP" class="bg-[#18181b] text-white text-center px-1">php</option>
    
       </select>
     </div>

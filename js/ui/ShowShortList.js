@@ -6,7 +6,7 @@ import { filter } from "../storage/state.js";
 
 export  function showShortList(users){
 
-  console.log(users)
+
         shortlistContainer.innerHTML=''
         users.forEach(element => {
             const div = document.createElement('article')
@@ -87,7 +87,7 @@ div.innerHTML=`<div class="flex items-center gap-5 min-w-0">
   ${status.outerHTML}
 
         <!-- Modifier -->
-        <button type="button"
+        <button type="button" 
                 class="flex items-center gap-2
                        px-4 py-2 rounded-xl
                        text-sm font-semibold
@@ -99,7 +99,7 @@ div.innerHTML=`<div class="flex items-center gap-5 min-w-0">
         </button>
 
         <!-- Supprimer -->
-        <button type="button"
+        <button type="button" id='supprimer' data-id='${element.id}' data-login='${element.login}'
                 class="flex items-center gap-2
                        px-4 py-2 rounded-xl
                        text-sm font-semibold

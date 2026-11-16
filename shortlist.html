@@ -343,7 +343,47 @@
 
   </section>
 </main>
+    <div id="deleteModal" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 hidden">
 
+        <div class="flex items-center gap-2 rounded-xl border border-slate-700 bg-slate-800 p-3 shadow-xl">
 
+            <button id="confirmDelete" type="button"
+                class="rounded-lg bg-red-600 px-4 py-2 text-sm font-semibold text-white hover:bg-red-500">
+                Confirmer
+            </button>
+
+            <button id="cancelDelete" type="button"
+                class="rounded-lg bg-slate-700 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-600">
+                Annuler
+            </button>
+
+        </div>
+    </div>
+  <div id="deletesucsses"
+    class="fixed top-20 right-5 z-[200] hidden
+           items-center gap-3
+           rounded-xl border border-emerald-400/40
+           bg-red-950 px-5 py-4
+           shadow-2xl shadow-red-900/40
+           transition-all duration-500
+           opacity-0 translate-x-10">
+
+    <div class="flex h-11 w-11 items-center justify-center
+                rounded-full bg-red-500/20">
+        <i class="fa-solid fa-circle-check
+                  text-3xl text-red-400"></i>
+    </div>
+
+    <div>
+        <h3 class="font-bold text-white">
+            le profile suprrimer 
+        </h3>
+        <p class="text-sm text-red-200">
+            la page va refrecher 
+        </p>
+    </div>
+</div>
+
+</body>
 </body>
 </html>

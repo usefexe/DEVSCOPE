@@ -87,7 +87,7 @@ div.innerHTML=`<div class="flex items-center gap-5 min-w-0">
   ${status.outerHTML}
 
         <!-- Modifier -->
-        <button type="button" 
+        <button type="button"  type="button" id='modifier' data-id='${element.id}'
                 class="flex items-center gap-2
                        px-4 py-2 rounded-xl
                        text-sm font-semibold

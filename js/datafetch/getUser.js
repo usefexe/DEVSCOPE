@@ -29,7 +29,7 @@ export async function fetchDAta(user) {
     
     const repos = await repodata.json();
 
-    console.log(datauser);
+    
     if (!userfetch.ok) {
       throw new Error("url not valide ");
     }

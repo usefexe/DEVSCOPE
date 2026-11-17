@@ -6,6 +6,7 @@ import { showStarcounting } from "../ui/showStarcounting.js"
 import { changeStar } from "./startclick..js"
 import { showShortList } from "../ui/ShowShortList.js"
 import { getShortList } from "../datafetch/getShortlist.js"
+import { showupdateSuccess } from "../ui/updateSucsse.js"
 const savemodal = document.getElementById('savemodal')
 const editCandidateName = document.getElementById('editCandidateName')
 const editModal = document.getElementById('editModal')
@@ -41,6 +42,7 @@ export async function openModif(id) {
 
             if (result) {
                 editModal.classList.add('hidden')
+                showupdateSuccess()
                getShortList()
             }
         }

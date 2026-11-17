@@ -42,7 +42,28 @@
     );
     span.innerHTML=`   <i class="fa-solid fa-circle text-[8px]"></i>
           À contacter`
-        }
+        }else if(status === 'entretien'){
+    span.classList.add(
+        "flex",
+        "items-center",
+        "gap-2",
+        "px-3",
+        "py-2",
+        "rounded-xl",
+        "text-xs",
+        "font-bold",
+        "uppercase",
+        "text-violet-400",
+        "bg-violet-500/10",
+        "border",
+        "border-violet-500/50"
+    );
+
+    span.innerHTML = `
+        <i class="fa-solid fa-circle text-[8px]"></i>
+        Entretien
+    `;
+}
         else{
                 span.classList.add(
         "flex",

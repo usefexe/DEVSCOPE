@@ -13,7 +13,10 @@ try{
         }else{
             
     let users = data.filter((el) => {
-    return el.login.toLowerCase().includes(filter.derachvalue.toLowerCase())
+    
+       const srch =el.login.toLowerCase().includes(filter.derachvalue.toLowerCase())
+       const flr = filter.filter==='all'||el.status===filter.filter
+       return srch && flr
 })       
 showShortList(users) 
         }

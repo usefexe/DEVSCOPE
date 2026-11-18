@@ -7,14 +7,14 @@ import { getShortList } from "./getShortlist.js";
 export function deleUserShortL(id,element ,login ){
      async function dlt() {
             try {
-                element.disabled=true
-      const res = await fetch(`${MOCKAPI_URL}/${id}`, { method: "DELETE" });
-      if (!res.ok) throw new Error(`error ${res.status}`);
+
+       await axios.delete(`${MOCKAPI_URL}/${id}`);
+   
      getShortList()
      updateLocal(login)
      showDeleteSuccess()
      document.getElementById('deleteModal').classList.add('hidden')
-      element.disabled=true
+   
      
     } catch (error) {
    

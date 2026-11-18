@@ -28,8 +28,7 @@ export async function fetchDAta(user) {
     const userfetch = await fetch(
       `https://api.github.com/users/${user}`,
         {
-          
-  
+               
   } 
       
       
@@ -40,7 +39,7 @@ export async function fetchDAta(user) {
     const repodata = await fetch(
       `https://api.github.com/users/${user}/repos`,
            {
- 
+     
   
   }
     

@@ -1,4 +1,7 @@
+import { updatePagination } from "../event/pagination.js";
 import { profiles } from "../storage/state.js";
+import { pagination } from "../storage/state.js";
+
 function misAJourDepuis(date) {
   const dateModification = new Date(date);
   const aujourdHui = new Date();
@@ -12,11 +15,17 @@ function misAJourDepuis(date) {
 
 export function showRepo() {
   const reposository= JSON.parse(localStorage.getItem('repos'))
+
+  
 let repos =reposository.filter((el)=>{
        const srch= el.name.toLowerCase().includes(profiles.search.toLowerCase())
        const fltr=profiles.filter==='tous'||profiles.filter===el.language
        return srch&&fltr
     })
+
+    updatePagination(repos)
+   repos=repos.slice(pagination.curentPage,pagination.curentPage+6)
+
   document.getElementById("reposCount").textContent = repos.length;
   document.getElementById("reposGrid").innerHTML = "";
   repos.forEach((el) => {

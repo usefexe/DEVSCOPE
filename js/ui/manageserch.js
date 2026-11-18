@@ -1,5 +1,6 @@
 import { fetchDAta } from "../datafetch/getUser.js";
 import { cherheProfile } from "../event/sarch2event.js";
+import { paginationEvent } from "../event/pagination.js";
 export default function manageSearchPage() {
   if (localStorage.getItem("serch")) {
     fetchDAta(JSON.parse(localStorage.getItem("serch")));
@@ -10,6 +11,6 @@ export default function manageSearchPage() {
     document.getElementById("loadingState").classList.add("hidden");
     document.getElementById("notFound").classList.add("hidden");
   }
-
+  paginationEvent()
   cherheProfile();
 }

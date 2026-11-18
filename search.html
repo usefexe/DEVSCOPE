@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DEVScope|search</title>
         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios@1/dist/axios.min.js"></script>
         <script src="./js/search.js" defer type="module"></script>
 </head>
 <body  class="bg-[url('./imgs/backround2.png')] bg-no-repeat bg-cover bg-center w-full min-h-screen  bg-fixed
@@ -170,96 +171,38 @@
   </div>
 
 
-  <div id="reposGrid" class="grid grid-cols-2 xl:grid-cols-2 gap-4 mt-6 overflow-y-auto max-h-140 overflow-x-hidden">
+  <div id="reposGrid" class="grid grid-cols-2 gap-4 mt-6 min-h-140 content-start">
 
 
-    <article  class="rounded-2xl p-1 pt-1 bg-[#111B30] border border-slate-700/60 hover:border-cyan-400/60 hover:shadow-lg hover:shadow-cyan-500/10  transition-all duration-300">
+   
 
-      <div class="rounded-2xl p-5 pb-0 pt-0 flex justify-between items-center ">
-        <div class="flex gap-4 items-center">
-          <i class="fa-regular fa-folder text-xl text-[#22D3EE]"></i>
-          <h3 class="text-lg font-bold text-2xl text-zinc-300">concepts_js</h3>
-        </div>
-
-        <a href="#" target="_blank"
-           rel="noopener noreferrer"   class="w-15 h-15 flex items-center justify-center rounded-xl bg-slate-800border border-slate-700 text-white hover:text-cyan-400"
-           aria-label="Voir le dépôt sur GitHub">
-          <i class="fa-brands fa-github text-2xl"></i>
-        </a>
-      </div>
-
-      <p class="text-base  text-zinc-400 text-sm text-semibold text-center ">Aucune description.</p>
-
-    
-      <div class="flex items-center gap-4 mt-4 text-center ml-14">
-        <span class="text-zinc-300 ">
-          <i class="fa-solid fa-circle text-sm "></i>
-          JavaScript
-        </span>
-
-        <span class="text-amber-500">
-          <i class="fa-solid fa-star"></i>
-          1
-        </span>
-
-        <span class="text-[#22D3EE]">
-          <i class="fa-solid fa-code-fork"></i>
-          0
-        </span>
-      </div>
-
-      
-      <p class="	text-sm mt-4 text-zinc-400 text-center" >
-        <i class="fa-regular fa-calendar-days"></i>
-        Mis à jour il y a 50 jours
-      </p>
-
-    </article>
-
-       <article  class="rounded-2xl p-1 pt-1 bg-[#111B30] border border-slate-700/60 hover:border-cyan-400/60 hover:shadow-lg hover:shadow-cyan-500/10  transition-all duration-300">
-
-      <div class="rounded-2xl p-5 pb-0 pt-0 flex justify-between items-center ">
-        <div class="flex gap-4 items-center">
-          <i class="fa-regular fa-folder text-xl text-[#22D3EE]"></i>
-          <h3 class="text-lg font-bold text-2xl text-zinc-300">concepts_js</h3>
-        </div>
-
-        <a href="#" target="_blank"
-           rel="noopener noreferrer"   class="w-15 h-15 flex items-center justify-center rounded-xl bg-slate-800border border-slate-700 text-white hover:text-cyan-400"
-           aria-label="Voir le dépôt sur GitHub">
-          <i class="fa-brands fa-github text-2xl"></i>
-        </a>
-      </div>
-
-      <p class="text-base  text-zinc-400 text-sm text-semibold text-center ">Aucune description.</p>
-
-    
-      <div class="flex items-center gap-4 mt-4 text-center ml-14">
-        <span class="text-zinc-300 ">
-          <i class="fa-solid fa-circle text-sm "></i>
-          JavaScript
-        </span>
-
-        <span class="text-amber-500">
-          <i class="fa-solid fa-star"></i>
-          1
-        </span>
-
-        <span class="text-[#22D3EE]">
-          <i class="fa-solid fa-code-fork"></i>
-          0
-        </span>
-      </div>
-
-      
-      <p class="	text-sm mt-4 text-zinc-400 text-center" >
-        <i class="fa-regular fa-calendar-days"></i>
-        Mis à jour il y a 50 jours
-      </p>
-
-    </article>
 
   </div>
+  <div id="repoPagination"
+    class="flex items-center justify-center gap-5 mt-auto pt-6 pb-4">
+
+    <button id="prevRepo"
+        class="px-4 py-2 rounded-xl border border-[#334155] bg-[#151C30] text-slate-300 hover:border-cyan-400 cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed">
+
+        <i class="fa-solid fa-chevron-left"></i>
+
+    </button>
+
+    <div class="text-slate-400 text-sm font-semibold">
+        Page
+        <span id="currentRepoPage" class="text-cyan-400">1</span>
+        /
+        <span id="totalRepoPages">1</span>
+    </div>
+
+    <button id="nextRepo"
+        class="px-4 py-2 rounded-xl border border-[#334155] bg-[#151C30] text-slate-300 hover:border-cyan-400 cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed">
+
+        <i class="fa-solid fa-chevron-right"></i>
+
+    </button>
+
+</div>
 
 </section>
 

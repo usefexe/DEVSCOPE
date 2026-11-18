@@ -42,6 +42,7 @@ let repos =reposository.filter((el)=>{
       "hover:shadow-cyan-500/10",
       "transition-all",
       "duration-300",
+     
     );
     article.innerHTML = `      <div class="rounded-2xl p-5 pb-0 pt-0 flex justify-between items-center ">
         <div class="flex gap-4 items-center">

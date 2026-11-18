@@ -28,18 +28,13 @@ export async function fetchDAta(user) {
     loadingState.classList.remove("hidden");
 
     const [userfetch,repodata]=await Promise.all([
-      fetch(`https://api.github.com/users/${user}`),
-      fetch(`https://api.github.com/users/${user}/repos`)
+      axios.get(`https://api.github.com/users/${user}`),
+      axios.get(`https://api.github.com/users/${user}/repos`)
     ])
 
-    if (!userfetch.ok || !repodata.ok) {
-  throw new Error("Erreur lors de la récupération des données");
-}
 
-  const [datauser, repos] = await Promise.all([
-  userfetch.json(),
-  repodata.json()
-]);
+
+  const [datauser, repos] = [userfetch.data,repodata.data]
     const userCtch = {
       saveat:Date.now(),
       profile:datauser,

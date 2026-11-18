@@ -22,35 +22,24 @@ export async function fetchDAta(user) {
     use.profile=datauser
      localStorage.removeItem("srch")
   }
-  else{try {
+  else{
+    try {
     document.getElementById("profile").classList.add("hidden");
     loadingState.classList.remove("hidden");
-    const userfetch = await fetch(
-      `https://api.github.com/users/${user}`,
-        {
-               
-  } 
-      
-      
-   
-    );
-     localStorage.removeItem("repos");
-    const datauser = await userfetch.json();
-    const repodata = await fetch(
-      `https://api.github.com/users/${user}/repos`,
-           {
-     
-  
-  }
-    
-    );
-    
-    const repos = await repodata.json();
 
-    
-    if (!userfetch.ok) {
-      throw new Error("url not valide ");
-    }
+    const [userfetch,repodata]=await Promise.all([
+      fetch(`https://api.github.com/users/${user}`),
+      fetch(`https://api.github.com/users/${user}/repos`)
+    ])
+
+    if (!userfetch.ok || !repodata.ok) {
+  throw new Error("Erreur lors de la récupération des données");
+}
+
+  const [datauser, repos] = await Promise.all([
+  userfetch.json(),
+  repodata.json()
+]);
     const userCtch = {
       saveat:Date.now(),
       profile:datauser,

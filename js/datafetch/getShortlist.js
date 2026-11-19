@@ -6,11 +6,9 @@ import { filter } from "../storage/state.js"
 
 export async function getShortList(){
 try{
-        const res= await fetch('https://6af4a03f55a1de7dcf045283.mockapi.io/shorlist/user')
-        const data= await res.json()
-        if(!res.ok){
-            showmpthySl() 
-        }else{
+        const res= await axios.get('https://6af4a03f55a1de7dcf045283.mockapi.io/shorlist/user')
+        const data= await res.data
+     
             
     let users = data.filter((el) => {
     
@@ -19,7 +17,7 @@ try{
        return srch && flr
 })       
 showShortList(users) 
-        }
+        
     }catch(err){
         showmpthySl() 
       

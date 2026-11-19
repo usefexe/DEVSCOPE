@@ -6,11 +6,12 @@
     <title>DEVScope|home</title>
         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
         <script src="./js/index.js" defer type="module"></script>
+          <script src="https://cdn.jsdelivr.net/npm/axios@1/dist/axios.min.js"></script>
 </head>
 <body  class="bg-[url('./imgs/backround.png')] bg-no-repeat bg-cover bg-center w-full h-screen  bg-fixed
              min-h-screen" >
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <header class=" max-w-[900px] ml-40 h-18 mt-[30px] px-6   " >
+    <header class="max-w-[1400px] mx-auto mt-[30px] px-6" >
   <nav class="flex  justify-between bg-[#080D1B] font-sans rounded-[20px] border-[#22D3EE] px-6 items-center">
      
     <div>
@@ -26,11 +27,58 @@
     </ul>
 
     <!-- Actions -->
-    <div>
-     
-      <button class="bg-gradient-to-r from-cyan-400 to-pink-500
-       text-white font-semibold px-5 py-1 rounded-xl">Se connecter</button>
+
+    <div id="rateLimitCard"
+    class="flex items-center gap-3 px-4 py-2
+           
+           rounded-xl">
+<div class="h-10 w-px bg-[#334155]"></div>
+    <!-- Status indicator -->
+    <span id="rateStatus"
+        class="w-2 h-2 shrink-0 rounded-full bg-emerald-400
+               shadow-[0_0_10px_#34d399]">
+    </span>
+  
+    <!-- GitHub icon -->
+    <i class="fa-brands fa-github text-2xl text-white"></i>
+
+    <!-- Rate limit -->
+    <div class="w-36 m-2 h-5">
+      
+        <div class="flex justify-between items-center
+                    text-xs font-semibold text-slate-200">
+
+            <span>API GitHub</span>
+
+            <span>
+                <span id="rateRemaining">42</span>
+                /
+                <span id="rateLimit">60</span>
+            </span>
+        </div>
+
+        <!-- Progress bar -->
+        <div class="w-full h-1.5 mt-2 bg-[#293047]
+                    rounded-full overflow-hidden">
+
+            <div id="rateProgress"
+                class="h-full w-[70%] bg-cyan-400 rounded-full
+                       transition-all duration-500">
+            </div>
+        </div>
     </div>
+
+    <!-- Separator -->
+    <div class="h-10 w-px bg-[#334155]"></div>
+
+    <!-- Reset timer -->
+    <div class="text-xs text-slate-300 whitespace-nowrap">
+        <i class="fa-regular fa-clock mr-1"></i>
+        Reset dans
+        <span id="rateReset">60 min</span>
+    </div>
+
+</div>
   </nav>
 </header>
 

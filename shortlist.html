@@ -554,6 +554,56 @@
         </p>
     </div>
 </div>
+<div id="undoToast"
+    role="status"
+    aria-live="polite"
+    class="fixed bottom-6 hidden left-1/2 -translate-x-1/2 z-[100]
+            w-[min(92vw,440px)]
+           bg-[#151C30] border border-[#334155]
+           rounded-2xl shadow-2xl overflow-hidden">
+
+    <div class="flex items-center gap-4 px-5 py-4">
+
+        <!-- Icon -->
+        <div class="w-11 h-11 shrink-0 rounded-xl
+                    bg-rose-500/10 text-rose-400
+                    flex items-center justify-center">
+            <i class="fa-solid fa-trash-can text-lg"></i>
+        </div>
+
+        <!-- Message -->
+        <div class="flex-1 min-w-0">
+            <p class="text-white font-semibold text-sm">
+                Candidat supprimé
+            </p>
+            <p class="text-[#94A3B8] text-xs mt-1">
+                Annulation possible pendant
+                <span id="undoTimer"
+                      class="text-cyan-400 font-bold">5</span> <span class="text-cyan-400 font-bold">s</span>
+            </p>
+        </div>
+
+        <!-- Undo button -->
+        <button id="undoDelete"
+            type="button"
+            class="shrink-0 px-4 py-2 rounded-xl
+                   bg-cyan-400/10 border border-cyan-400/30
+                   text-cyan-400 text-sm font-bold
+                   hover:bg-cyan-400 hover:text-[#0D1120]
+                   transition-colors cursor-pointer">
+            <i class="fa-solid fa-rotate-left mr-1"></i>
+            Annuler
+        </button>
+    </div>
+
+    <!-- Timer progress bar -->
+    <div class="h-1 w-full bg-[#293047]">
+        <div id="undoProgress"
+             class="h-full w-full bg-gradient-to-r
+                    from-cyan-400 via-purple-500 to-pink-500">
+        </div>
+    </div>
+</div>
 </body>
 </body>
 </html>

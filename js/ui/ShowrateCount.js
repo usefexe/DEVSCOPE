@@ -7,7 +7,7 @@ const rateReset = document.getElementById('rateReset')
 export async function ShowRateLimit(){
       const  data= await getRatecount()
       if(data){
-        console.log(data)
+        // console.log(data)
         rateLimitStyle(data.remaining,data.limit)
       rateRemaining.textContent=data.remaining
       rateLimit.textContent=data.limit

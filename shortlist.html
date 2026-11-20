@@ -604,6 +604,136 @@
         </div>
     </div>
 </div>
+<div id="compareModal"
+    class="hidden fixed inset-0 z-[100] bg-black/70
+           backdrop-blur-sm flex items-center justify-center p-4">
+
+    <div class="w-full max-w-[600px] max-h-[90vh] overflow-y-auto
+                bg-[#101626] border border-[#334155]
+                rounded-3xl p-6 shadow-2xl">
+
+        <!-- Header -->
+        <div class="flex items-center gap-4 mb-6">
+
+            <div class="w-12 h-12 rounded-xl bg-purple-500/20
+                        flex items-center justify-center text-purple-400">
+                <i class="fa-solid fa-chart-simple text-xl"></i>
+            </div>
+
+            <div class="flex-1">
+                <h2 class="text-xl font-bold text-[#F1F5F9]">
+                    Comparer deux développeurs
+                </h2>
+                <p class="text-sm text-[#94A3B8] mt-1">
+                    Sélectionnez un deuxième profil à comparer.
+                </p>
+            </div>
+
+            <button id="closeCompareModal" type="button"
+                class="text-slate-400 hover:text-white cursor-pointer">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+
+        </div>
+
+        <!-- Premier développeur -->
+        <h3 class="text-sm font-semibold text-slate-300 mb-3">
+            Premier développeur
+        </h3>
+
+        <div id="firstDeveloper"
+            class="flex items-center gap-3 p-4 rounded-xl
+                   bg-[#151C30] border border-[#334155]">
+
+            <img id="firstDevAvatar"
+                src="./imgs/profile.jpg"
+                class="w-12 h-12 rounded-xl object-cover"
+                alt="Avatar">
+
+            <div class="flex-1">
+                <h3 id="firstDevName" class="text-white font-bold">
+                    Youssef It Salah
+                </h3>
+
+                <p id="firstDevLogin" class="text-sm text-slate-400">
+                    @youssefitsalah
+                </p>
+            </div>
+
+            <span class="text-xs text-cyan-400 bg-cyan-400/10
+                         border border-cyan-400/30 rounded-lg px-3 py-2">
+                <i class="fa-solid fa-check"></i>
+                Sélectionné
+            </span>
+
+        </div>
+
+        <!-- VS Separator -->
+        <div class="flex items-center gap-4 my-5">
+
+            <div class="flex-1 h-px bg-purple-500/50"></div>
+
+            <span class="px-3 py-1 rounded-lg border border-purple-500
+                         bg-purple-500/10 text-purple-400 font-bold">
+                VS
+            </span>
+
+            <div class="flex-1 h-px bg-purple-500/50"></div>
+
+        </div>
+
+        <!-- Deuxième développeur -->
+        <h3 class="text-sm font-semibold text-slate-300 mb-3">
+            Deuxième développeur
+        </h3>
+
+        <!-- Search -->
+        <div class="flex items-center gap-3 px-4 py-3 mb-4
+                    bg-[#151C30] border border-[#334155] rounded-xl">
+
+            <i class="fa-solid fa-magnifying-glass text-slate-400"></i>
+
+            <input id="searchCompareDev"
+                type="text"
+                placeholder="Rechercher dans la shortlist..."
+                class="w-full outline-none bg-transparent
+                       text-white placeholder:text-slate-400 text-sm">
+
+        </div>
+
+        <!-- Liste des développeurs -->
+        <div id="compareDevelopersList"
+             class="flex flex-col gap-3 max-h-60 overflow-y-auto">
+
+            <!-- Exemple d'un développeur -->
+           
+        </div>
+
+        <!-- Footer -->
+        <div class="flex justify-between items-center gap-3 mt-6">
+
+            <button id="cancelCompare" type="button"
+                class="px-5 py-3 rounded-xl border border-[#334155]
+                       bg-[#151C30] text-slate-300 font-semibold
+                       hover:bg-slate-700 cursor-pointer">
+                Annuler
+            </button>
+
+            <button id="launchCompare" type="button" disabled
+                class="px-5 py-3 rounded-xl text-white font-semibold
+                       bg-gradient-to-r from-cyan-400 to-purple-500
+                       hover:opacity-90 cursor-pointer
+                       disabled:opacity-40 disabled:cursor-not-allowed">
+
+                Lancer la comparaison
+                <i class="fa-solid fa-arrow-right ml-2"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+</div>
 </body>
-</body>
+
 </html>

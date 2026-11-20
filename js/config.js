@@ -9,4 +9,5 @@ export const STATUSES = ["À contacter", "Entretien", "Retenu", "Refusé"];
 export const CACHE_DURATION = 10 * 60 * 1000; // 10 minutes en ms
 export const CACHE_PREFIX = "devscope_";
 
+
 // Pas de token GitHub ici ni ailleurs dans le code.

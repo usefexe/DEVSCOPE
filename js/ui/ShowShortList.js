@@ -79,14 +79,28 @@ div.innerHTML=`<div class="flex items-center gap-5 min-w-0">
       <!-- Rating + Actions -->
       <div class="flex flex-wrap items-center gap-3
                   lg:justify-end shrink-0">
+                <button type="button"  data-id='${element.id}' id='compare'
+    class="compareBtn flex items-center justify-center gap-2
+           px-4 py-2 rounded-xl
+           border border-cyan-400/50
+           bg-cyan-400/5 text-cyan-400
+           font-semibold text-sm
+           hover:bg-cyan-400/15 hover:border-cyan-400
+           transition-all duration-300 cursor-pointer">
+
+    <i class="fa-solid fa-chart-simple"></i>
+    Comparer
+
+</button>
 
         <!-- Rating -->
      ${star.outerHTML}
 
         <!-- Statut -->
-  ${status.outerHTML}
-
+     <div class='flex flex-col gap-2'>
+ ${status.outerHTML}
         <!-- Modifier -->
+        <div class='flex gap-2'>
         <button type="button"  type="button" id='modifier' data-id='${element.id}'
                 class="flex items-center gap-2
                        px-4 py-2 rounded-xl
@@ -95,7 +109,7 @@ div.innerHTML=`<div class="flex items-center gap-5 min-w-0">
                        border border-cyan-500/50
                        hover:bg-cyan-500/20 transition">
           <i class="fa-solid fa-pen"></i>
-          Modifier
+       
         </button>
 
         <!-- Supprimer -->
@@ -106,10 +120,11 @@ div.innerHTML=`<div class="flex items-center gap-5 min-w-0">
                        text-rose-400 bg-rose-500/10
                        border border-rose-500/30
                        hover:bg-rose-500/20 transition">
-          <i class="fa-solid fa-xmark"></i>
-          Supprimer
+          <i class="fa-solid fa-trash"></i>
+       
         </button>
-
+        </div>
+</div>
       </div>`
 
       shortlistContainer.appendChild(div)

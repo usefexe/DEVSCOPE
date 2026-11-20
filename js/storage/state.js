@@ -16,3 +16,7 @@ export const pagination={
 
 
 }
+
+export const compare={
+    search:''
+}

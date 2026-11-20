@@ -1,9 +1,13 @@
+import { compare } from "../storage/state.js"
 
 const compareDevelopersList = document.getElementById('compareDevelopersList')
 export function showcomparList(id){
     const liste= JSON.parse(localStorage.getItem('shotlist'))
     const user= liste.filter((el)=>{
-    return el.id !==id
+    const elem= el.id !==id
+    const inc=el.login.toLowerCase().includes(compare.search.toLowerCase())
+    const incname = el.name?el.name.toLowerCase().includes(compare.search.toLowerCase()):false
+    return elem && (inc || incname)
     })
       compareDevelopersList.innerHTML=''
     user.forEach(elm => {

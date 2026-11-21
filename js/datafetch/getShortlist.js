@@ -17,7 +17,7 @@ try{
        return srch && flr
 })       
 showShortList(users) 
-        
+localStorage.setItem('shotlist',JSON.stringify(users))
     }catch(err){
         showmpthySl() 
       

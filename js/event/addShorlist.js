@@ -18,7 +18,7 @@ export function addShortList() {
             avatar_url: user.avatar_url,
             html_url: user.html_url,
             language: user.language || 'unknown',
-            status: "pending",
+            status: "acontacter",
             note: null,
             rating: 2
         }

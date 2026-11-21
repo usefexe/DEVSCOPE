@@ -83,7 +83,7 @@
 
     span.innerHTML = `
         <i class="fa-solid fa-circle text-[8px]"></i>
-        Pending
+        Retenu
     `;
         }
         return span

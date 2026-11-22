@@ -1,7 +1,6 @@
 // js/config.js
 export const GITHUB_API = "https://api.github.com";
 
-// Copie ici l'URL MockAPI que tu utilises déjà dans postuser.js / getUser.js
 export const MOCKAPI_URL = "https://6af4a03f55a1de7dcf045283.mockapi.io/shorlist/user";
 
 export const STATUSES = ["À contacter", "Entretien", "Retenu", "Refusé"];

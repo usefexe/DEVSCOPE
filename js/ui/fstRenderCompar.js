@@ -1,10 +1,10 @@
 import { getAnalitycCompar } from "../datafetch/getAnalyseCompare.js";
 import { getUserTocompare } from "../datafetch/getUserTocompar.js"
-
+  const loadingState  = document.getElementById('loadingState')
 const params = new URLSearchParams(window.location.search);
 
 export async function fstrender(){
-
+loadingState.classList.remove('hidden')
   
       const div1=params.get('div1')
     const div2=params.get('div2')
@@ -21,5 +21,7 @@ export async function fstrender(){
         }))
     }))
     const compar = await getAnalitycCompar(developers)
-    console.log(compar)
+    if(compar){
+        loadingState.classList.add('hidden')
+    }
 }

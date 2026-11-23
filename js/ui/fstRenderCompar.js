@@ -1,6 +1,8 @@
 import { getAnalitycCompar } from "../datafetch/getAnalyseCompare.js";
 import { getUserTocompare } from "../datafetch/getUserTocompar.js"
 import { showHeaderCompar } from "./showHeaderCompar.js";
+import { showLanguageList } from "./showLnglis.js";
+import { showLngPrs } from "./showLngPrs.js";
   const loadingState  = document.getElementById('loadingState')
 const params = new URLSearchParams(window.location.search);
 
@@ -21,11 +23,14 @@ loadingState.classList.remove('hidden')
             language: repo.language
         }))
     }))
+    const trpc1=div1data.repo.length
+    const trpc2=div2data.repo.length
     const compar = await getAnalitycCompar(developers)
     if(compar){
         loadingState.classList.add('hidden')
           document.getElementById('comparisonResult').classList.remove('hidden')
         showHeaderCompar([div1data,div2data],compar)
+        showLngPrs(compar.developer1.topLanguages,compar.developer2.topLanguages,trpc1,trpc2)
         
         
     }

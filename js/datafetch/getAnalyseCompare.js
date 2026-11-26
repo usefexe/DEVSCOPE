@@ -51,7 +51,7 @@ avec cette structure :
 
 `;
 export async function getAnalitycCompar(developers){
-const apiyrl = 'https://api.groq.com/openai/v1/chat/completions'
+const apiyrl = ''
 
 const config = {
     headers: {

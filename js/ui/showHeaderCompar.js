@@ -10,6 +10,8 @@ const dev1Technologies= document.getElementById('dev1Technologies')
 const dev2Technologies= document.getElementById('dev2Technologies')
 const langDev1Name = document.getElementById('langDev1Name')
 const langDev2Name = document.getElementById('langDev2Name')
+const activityDev2Name = document.getElementById("activityDev2Name")
+const activityDev1Name = document.getElementById("activityDev1Name")
 import { renderComparison } from "./renderComparaison.js"
 import { renderTechnologies } from "./renderTeceh.js"
 export function showHeaderCompar(data,compare){
@@ -31,6 +33,8 @@ const developer2=compare.developer2
       dev2Avatar.src=profile2.avatar_url
    dev2Name.textContent=profile2.name||profile2.login
    dev2Login.textContent=`@${profile2.login}`
+   activityDev2Name.textContent=profile2.login
+   activityDev1Name.textContent=profile1.login
    dev2Orientation.textContent=developer2.orientation
    renderTechnologies(developer1.technologies,dev1Technologies)
     renderTechnologies(developer2.technologies,dev2Technologies)

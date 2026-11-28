@@ -81,7 +81,28 @@ let repos =reposository.filter((el)=>{
       <p class="	text-sm mt-4 text-zinc-400 text-center" >
         <i class="fa-regular fa-calendar-days"></i>
        ${misAJourDepuis(el.updated_at)}
-      </p>`;
+      </p>
+      
+      <div class="mt-4 mx-4 mb-3 pt-3 border-t border-[#293047]">
+
+    <a href="./repository.html?owner=${encodeURIComponent(el.owner.login)}&repo=${encodeURIComponent(el.name)}"
+       class="flex items-center justify-center gap-3
+              py-2.5 rounded-xl
+              bg-cyan-400/10 border border-cyan-400/30
+              text-cyan-400 text-sm font-semibold
+              hover:bg-cyan-400/20
+              hover:border-cyan-400
+              transition-all duration-300">
+
+        <i class="fa-solid fa-folder-tree"></i>
+
+        Explore Repository
+
+        <i class="fa-solid fa-arrow-right text-xs"></i>
+
+    </a>
+
+</div>`;
     document.getElementById("reposGrid").appendChild(article);
   });
   

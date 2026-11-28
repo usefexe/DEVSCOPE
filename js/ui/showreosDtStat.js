@@ -205,7 +205,7 @@ const languagecolor=getLanguageColor(data.language)
 
                 <div>
                     <p class="text-xs text-slate-400">License</p>
-                    <p id="repoLicense" class="font-semibold mt-1">${data.license||'accun'}</p>
+                    <p id="repoLicense" class="font-semibold mt-1">${data.license?.name||'accun'}</p>
                 </div>
 
             </div>
